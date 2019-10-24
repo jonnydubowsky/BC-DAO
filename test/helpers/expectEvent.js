@@ -1,5 +1,8 @@
-const {expect} = require('chai');
-const {web3, BN} = require('../node_modules/openzeppelin-test-helpers/src/setup');
+const { expect } = require("chai");
+const {
+  web3,
+  BN
+} = require("../../node_modules/openzeppelin-test-helpers/src/setup");
 
 function getParameter(event, parameterName) {
   const parameterList = event.returnValues;
@@ -25,7 +28,10 @@ function inLogs(logs, eventName, eventArgs = {}) {
     }
   });
 
-  expect(matchingEvents.length > 0).to.equal(true, `No '${eventName}' events found`);
+  expect(matchingEvents.length > 0).to.equal(
+    true,
+    `No '${eventName}' events found`
+  );
 
   const exception = [];
 
@@ -50,7 +56,12 @@ function inLogs(logs, eventName, eventArgs = {}) {
 }
 
 async function inConstruction(contract, eventName, eventArgs = {}) {
-  return inTransaction(contract.transactionHash, contract.constructor, eventName, eventArgs);
+  return inTransaction(
+    contract.transactionHash,
+    contract.constructor,
+    eventName,
+    eventArgs
+  );
 }
 
 async function inTransaction(txHash, emitter, eventName, eventArgs = {}) {

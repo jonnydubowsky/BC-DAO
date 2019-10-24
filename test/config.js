@@ -1,8 +1,7 @@
-'use strict';
-process.env.NODE_ENV = 'test';
+"use strict";
+process.env.NODE_ENV = "test";
 
-import {ZWeb3, Contracts} from '@openzeppelin/upgrades';
-
+const { Contracts, ZWeb3 } = require("@openzeppelin/upgrades");
 ZWeb3.initialize(web3.currentProvider);
 
 //TODO: Have these automatically set based on network chosen
@@ -18,6 +17,6 @@ Contracts.setArtifactsDefaults({
 //   gasPrice: 1
 // });
 
-require('chai')
-  .use(require('@openzeppelin/upgrades').assertions)
+require("chai")
+  .use(require("@openzeppelin/upgrades").assertions)
   .should();

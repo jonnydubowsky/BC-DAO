@@ -1,62 +1,18 @@
 {
-  "name": "@dorg/bc-dao",
-  "version": "0.0.1-alpha",
-  "description": "Bonding Curves for DAOs",
-  "files": [
-    "contracts/",
-    "build/contracts/",
-    "migrations/",
-    "test/",
-    "truffle-config.js"
-  ],
   "scripts": {
-    "test": "oz publish --network development && oz push --network development && truffle test",
-    "compile": "truffle compile --all",
-    "build": "rimraf build && truffle compile",
-    "deploy": "sh ecosystem.deploy.sh",
-    "eslint": "./node_modules/.bin/eslint ./",
-    "eslint:fix": "./node_modules/.bin/eslint ./ --fix",
-    "solhint": "./node_modules/.bin/solhint contracts/**/*.sol",
-    "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol",
-    "solium": "./node_modules/.bin/solium -d contracts/",
-    "solium:fix": "./node_modules/.bin/solium -d contracts/ --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dOrgTech/BC-DAO"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dOrgTech/BC-DAO/issues"
-  },
-  "homepage": "https://github.com/dOrgTech/BC-DAO#readme",
-  "dependencies": {
-    "@babel/polyfill": "^7.4.4",
-    "@babel/register": "^7.5.5",
-    "@openzeppelin/contracts-ethereum-package": "^2.2.3",
-    "@openzeppelin/upgrades": "^2.5.2",
-    "dotenv": "^6.2.0",
-    "openzeppelin-test-helpers": "^0.4.2",
-    "truffle-hdwallet-provider": "^1.0.3"
+    "compile": "npx buidler compile"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@openzeppelin/cli": "^2.5.1",
-    "chai": "^4.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-mocha": "^5.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "ethlint": "^1.2.4",
-    "husky": "^3.0.0",
-    "prettier": "^1.18.2",
-    "prettier-plugin-solidity": "^1.0.0-alpha.27",
-    "rimraf": "^2.6.3",
-    "solhint": "^2.1.0",
-    "solhint-plugin-prettier": "0.0.3",
-    "solidity-coverage": "^0.6.4"
+    "@nomiclabs/buidler": "^1.0.1",
+    "@nomiclabs/buidler-truffle5": "^1.0.1",
+    "@nomiclabs/buidler-web3": "^1.0.1",
+    "@openzeppelin/contracts-ethereum-package": "^2.3.0",
+    "@openzeppelin/upgrades": "^2.5.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.6",
+    "openzeppelin-test-helpers": "^0.5.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4",
+    "web3": "^1.2.2"
   }
 }

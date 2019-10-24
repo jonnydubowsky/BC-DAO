@@ -10,8 +10,8 @@
 // const expect = require("chai").expect;
 // const should = require("chai").should();
 
-// require("../setup");
-// const { deployProject, deployBondedToken } = require("../../index.js");
+// require("../config");
+// const { deployProject, deployBondedToken } = require("../../scripts/oz-deploy.js");
 
 // const { bondedTokenValues } = require("../constants/tokenValues");
 // const {

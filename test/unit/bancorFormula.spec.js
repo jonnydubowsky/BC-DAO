@@ -10,18 +10,28 @@ const {
 const expect = require("chai").expect;
 const should = require("chai").should();
 
-require("../setup");
-const { deployProject, deployBancorFormula } = require("../../index.js");
+require("../config");
+const {
+  deployProject,
+  deployBancorFormula
+} = require("../../scripts/oz-deploy.js");
 
 const { values } = require("../constants/bancorValues");
 
-contract("BancorFormula", accounts => {
+describe("BancorFormula", async () => {
   let tx;
   let result;
   let project;
 
-  const creator = accounts[0];
-  const initializer = accounts[1];
+  let accounts;
+  let creator;
+  let initializer;
+
+  before(async () => {
+    accounts = await web3.eth.getAccounts();
+    creator = accounts[0];
+    initializer = accounts[1];
+  });
 
   beforeEach(async function() {
     project = await deployProject();

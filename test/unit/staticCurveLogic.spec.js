@@ -10,10 +10,14 @@ const {
 const expect = require("chai").expect;
 const should = require("chai").should();
 
-require("../setup");
-const { deployProject, deployStaticCurveLogic } = require("../../index.js");
+require("../config");
+const {
+  deployProject,
+  deployStaticCurveLogic
+} = require("../../scripts/oz-deploy.js");
 
-contract("StaticCurveLogic", accounts => {
+describe("StaticCurveLogic", async () => {
+  let accounts = await web3.eth.getAccounts();
   let tx;
   let result;
   let project;
